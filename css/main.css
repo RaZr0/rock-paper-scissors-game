@@ -160,10 +160,24 @@ table {
       flex-wrap: wrap;
 }
 
+.header__title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 @media (max-width: 767.9px) {
-  .header__logo {
-    height: 48px;
-    width: 91px;
+  .header__title {
+    font-size: 21px;
+    line-height: 16px;
+    max-width: 92px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .header__title {
+    font-size: 40px;
+    line-height: 32px;
+    max-width: 175px;
   }
 }
 

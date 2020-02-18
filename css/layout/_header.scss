@@ -7,10 +7,19 @@
         align-items: center;
         flex-wrap: wrap;
     }
-    &__logo {
+    &__title {
+        color: $white;
+        font-weight: 700;
         @media #{$small} {
-            height: 48px;
-            width: 91px;
+            font-size: 21px;
+            line-height: 16px;
+            max-width: 92px;
+        }
+        @media #{$medium},
+        #{$large} {
+            font-size: 40px;
+            line-height: 32px;
+            max-width: 175px;
         }
     }
     @media #{$small},
