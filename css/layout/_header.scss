@@ -1,0 +1,31 @@
+.header {
+    .content {
+        border: solid 3px rgba(255, 255, 255, 0.29);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &__logo {
+        @media #{$small} {
+            height: 48px;
+            width: 91px;
+        }
+    }
+    @media #{$small},
+    #{$medium} {
+        margin-top: 32px;
+        border-radius: 5px;
+        .content {
+            padding: 12px 12px 12px 23px;
+        }
+    }
+    @media #{$medium},
+    #{$large} {
+        margin-top: 48px;
+        .content {
+            padding: 18px 24px 18px 33px;
+        }
+    }
+}

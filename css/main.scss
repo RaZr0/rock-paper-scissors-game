@@ -1,0 +1,35 @@
+@import '../css/breakpoints';
+@import '../css/colors';
+@import '../css/fonts';
+@import '../css/reset';
+@import '../css/layout/layout';
+@import '../css/components/components';
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient($Radial-Gradient);
+    font-family: 'Barlow Semi Condensed';
+}
+
+.img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    @media #{$small} {
+        max-width: 85%;
+    }
+    @media #{$medium},
+    #{$large} {
+        max-width: 704px;
+    }
+}

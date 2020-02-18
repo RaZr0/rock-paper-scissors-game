@@ -1,0 +1,287 @@
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  src: url("/fonts/Barlow Semi Condensed 600.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  src: url("/fonts/Barlow Semi Condensed 700.ttf");
+  font-weight: 700;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-size: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header .content {
+  border: solid 3px rgba(255, 255, 255, 0.29);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 767.9px) {
+  .header__logo {
+    height: 48px;
+    width: 91px;
+  }
+}
+
+@media (max-width: 767.9px), (min-width: 768px) and (max-width: 1365.9px) {
+  .header {
+    margin-top: 32px;
+    border-radius: 5px;
+  }
+  .header .content {
+    padding: 12px 12px 12px 23px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .header {
+    margin-top: 48px;
+  }
+  .header .content {
+    padding: 18px 24px 18px 33px;
+  }
+}
+
+.score {
+  background: -webkit-gradient(linear, left bottom, left top, from(#F3F3F3), to(#FFFFFF));
+  background: linear-gradient(0deg, #F3F3F3, #FFFFFF);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+@media (max-width: 767.9px) {
+  .score {
+    padding: 10px 19px;
+    max-height: 72px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .score {
+    padding: 16px 48px;
+  }
+}
+
+.score__title {
+  color: #2a46c0;
+}
+
+@media (max-width: 767.9px) {
+  .score__title {
+    font-size: 0.625rem;
+    letter-spacing: 1.5px;
+    line-height: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .score__title {
+    letter-spacing: 2.5px;
+    line-height: 21px;
+  }
+}
+
+.score__number {
+  color: #3b4363;
+}
+
+@media (max-width: 767.9px) {
+  .score__number {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .score__number {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1f3756), to(#141539));
+  background: linear-gradient(#1f3756, #141539);
+  font-family: 'Barlow Semi Condensed';
+}
+
+.img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (max-width: 767.9px) {
+  .container {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+  .container {
+    max-width: 704px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
