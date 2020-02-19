@@ -1,0 +1,27 @@
+.shape-selection {
+    color: $white;
+    display: inline-block;
+    text-align: center;
+    @media #{$medium},
+    #{$large} {
+        display: flex;
+        flex-direction: column;
+    }
+    &__shape {}
+    &__who-select {
+        line-height: 32px;
+        font-weight: 700;
+        @media #{$small} {
+            margin-top: 17px;
+            font-size: 15px;
+            letter-spacing: 1.875px;
+        }
+        @media #{$medium},
+        #{$large} {
+            order: -1;
+            margin-bottom: 67px;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+    }
+}

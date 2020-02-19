@@ -1,13 +1,10 @@
 @import '../colors';
-@mixin shape($shape-url, $border-color, $box-shadow-color) {
+.base-shape {
     border-width: 10px;
-    border-style: solid;
     border-radius: 50%;
-    border-color: transparent;
     display: inline-block;
-    position: relative;
-    box-shadow: 0 6px 0 $box-shadow-color;
-    background: $border-color;
+    border-style: solid;
+    border-color: transparent;
     @media #{$small} {
         width: 130px;
         height: 130px;
@@ -17,6 +14,20 @@
         width: 180px;
         height: 180px;
     }
+}
+
+@mixin shape($shape-url, $border-color, $box-shadow-color) {
+    @extend .base-shape;
+    position: relative;
+    box-shadow: 0 10px 0 $box-shadow-color;
+    @media #{$small} {
+        box-shadow: 0 6px 0 $box-shadow-color;
+    }
+    @media #{$medium},
+    #{$large} {
+        box-shadow: 0 11px 0 $box-shadow-color;
+    }
+    background: $border-color;
     &:hover {
         box-shadow: 0 6px 0 $box-shadow-color, 0 0px 0px 20px rgba(#979797, .2);
         cursor: pointer;
@@ -63,6 +74,11 @@
         background-position: 50%;
         box-shadow: inset 0 6px 0 rgba(151, 151, 151, .3)
     }
+}
+
+.shape-placeholder {
+    @extend .base-shape;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .paper {

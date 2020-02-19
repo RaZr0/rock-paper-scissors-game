@@ -34,13 +34,31 @@
         </div>
     </header>
     <main class="main">
-        <section class="step1">
+        <section class="step1" style="display: none;">
             <div class="container">
                 <div class="content">
                     <div class="shapes-wrapper">
                         <div class="step1__paper paper"></div>
-                        <div class="step1__scissors scissors "></div>
+                        <div class="step1__scissors scissors"></div>
                         <div class="step1__rock rock"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="step2">
+            <div class="container">
+                <div class="content">
+                    <div class="step2__user-selection shape-selection">
+                        <div class="shape-selection__shape rock"></div>
+                        <p class="shape-selection__who-select">
+                            YOU PICKED
+                        </p>
+                    </div>
+                    <div class="step2__computer-selection shape-selection">
+                        <div class="shape-selection__shape shape-placeholder"></div>
+                        <p class="shape-selection__who-select">
+                            THE HOUSE PICKED
+                        </p>
                     </div>
                 </div>
             </div>
