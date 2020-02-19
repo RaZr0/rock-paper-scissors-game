@@ -45,25 +45,56 @@
                 </div>
             </div>
         </section>
-        <section class="step2">
+        <section class="game-wizard">
             <div class="container">
                 <div class="content">
-                    <div class="step2__user-selection shape-selection">
+                    <div class="game-wizard__user-selection shape-selection">
                         <div class="shape-selection__shape rock"></div>
                         <p class="shape-selection__who-select">
                             YOU PICKED
                         </p>
                     </div>
-                    <div class="step2__computer-selection shape-selection">
+                    <div class="game-wizard__computer-selection shape-selection">
                         <div class="shape-selection__shape shape-placeholder"></div>
                         <p class="shape-selection__who-select">
                             THE HOUSE PICKED
                         </p>
                     </div>
+                    <div class="game-wizard__game-state game-state">
+                        <p class="game-state__who-won">
+                            YOU WIN
+                        </p>
+                        <button class="game-state__play-again">PLAY AGAIN</button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content">
+                <button class="footer__rules">
+                    RULES
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <section class="rules-modal">
+        <div class="container">
+            <div class="content">
+                <h2 class="rules-modal__title">RULES</h2>
+                <img class="rules-modal__rules-img" src="/images/image-rules.svg" alt="rules"></img>
+                <button class="rules-modal__close">
+                    <img class="rules-modal__close-icon" src="/images/icon-close.svg" alt="icon close model"></img>
+                </button>
+            </div>
+            <div class="overlay">
+            </div>
+        </div>
+
+    </section>
 
     <script src="/js/main.js"></script>
 </body>

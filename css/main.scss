@@ -16,9 +16,13 @@ html {
 body {
     background: linear-gradient($Radial-Gradient);
     font-family: 'Barlow Semi Condensed';
+    &.modal-active {
+        overflow: hidden;
+        position: fixed;
+    }
 }
 
-.img {
+img {
     max-width: 100%;
 }
 
