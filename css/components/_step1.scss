@@ -1,0 +1,35 @@
+.step1 {
+    background-image: url(/images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: contain;
+    max-width: 474px;
+    margin: auto;
+    .content {
+        position: relative;
+        @media #{$small} {
+            min-height: 281px;
+        }
+        @media #{$medium},
+        #{$large} {
+            min-height: 319px;
+        }
+    }
+    &__paper {
+        position: absolute;
+        top: -20%;
+        left: 0;
+    }
+    &__scissors {
+        position: absolute;
+        top: -20%;
+        right: 0;
+    }
+    &__rock {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+}
