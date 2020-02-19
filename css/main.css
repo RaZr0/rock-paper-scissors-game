@@ -227,6 +227,12 @@ table {
   }
 }
 
+.paper:hover {
+  -webkit-box-shadow: 0 6px 0 #2a45c2, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+          box-shadow: 0 6px 0 #2a45c2, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+  cursor: pointer;
+}
+
 .paper::before {
   content: '';
   background-image: url("/images/icon-paper.svg");
@@ -305,6 +311,12 @@ table {
   }
 }
 
+.scissors:hover {
+  -webkit-box-shadow: 0 6px 0 #c76c1b, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+          box-shadow: 0 6px 0 #c76c1b, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+  cursor: pointer;
+}
+
 .scissors::before {
   content: '';
   background-image: url("/images/icon-scissors.svg");
@@ -381,6 +393,12 @@ table {
     width: 180px;
     height: 180px;
   }
+}
+
+.rock:hover {
+  -webkit-box-shadow: 0 6px 0 #9d1634, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+          box-shadow: 0 6px 0 #9d1634, 0 0px 0px 20px rgba(151, 151, 151, 0.2);
+  cursor: pointer;
 }
 
 .rock::before {
@@ -501,35 +519,37 @@ table {
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-size: contain;
-  max-width: 474px;
   margin: auto;
 }
 
 .step1 .content {
   position: relative;
+  margin: auto;
 }
 
 @media (max-width: 767.9px) {
   .step1 .content {
-    min-height: 281px;
+    min-height: 219px;
+    max-width: 318px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
   .step1 .content {
     min-height: 319px;
+    max-width: 474px;
   }
 }
 
 .step1__paper {
   position: absolute;
-  top: -20%;
+  top: -25%;
   left: 0;
 }
 
 .step1__scissors {
   position: absolute;
-  top: -20%;
+  top: -25%;
   right: 0;
 }
 
@@ -577,15 +597,7 @@ body {
   }
 }
 
-@media (max-width: 767.9px) {
-  .step1 {
-    margin-top: 140px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
-  .step1 {
-    margin-top: 120px;
-  }
+.step1 {
+  margin-top: 140px;
 }
 /*# sourceMappingURL=main.css.map */

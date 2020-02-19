@@ -17,6 +17,10 @@
         width: 180px;
         height: 180px;
     }
+    &:hover {
+        box-shadow: 0 6px 0 $box-shadow-color, 0 0px 0px 20px rgba(#979797, .2);
+        cursor: pointer;
+    }
     &::before {
         content: '';
         background-image: url($shape-url );

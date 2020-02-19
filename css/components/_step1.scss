@@ -3,26 +3,31 @@
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-size: contain;
-    max-width: 474px;
     margin: auto;
+    @media #{$small} {}
+    @media #{$medium},
+    #{$large} {}
     .content {
         position: relative;
+        margin: auto;
         @media #{$small} {
-            min-height: 281px;
+            min-height: 219px;
+            max-width: 318px;
         }
         @media #{$medium},
         #{$large} {
             min-height: 319px;
+            max-width: 474px;
         }
     }
     &__paper {
         position: absolute;
-        top: -20%;
+        top: -25%;
         left: 0;
     }
     &__scissors {
         position: absolute;
-        top: -20%;
+        top: -25%;
         right: 0;
     }
     &__rock {
