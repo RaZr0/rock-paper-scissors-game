@@ -20,18 +20,22 @@
             max-width: 474px;
         }
     }
-    &__paper {
+    .shape {
         position: absolute;
+        &:hover {
+            box-shadow: 0 0px 0px 20px rgba(#979797, .2);
+            cursor: pointer;
+        }
+    }
+    &__paper {
         top: -25%;
         left: 0;
     }
     &__scissors {
-        position: absolute;
         top: -25%;
         right: 0;
     }
     &__rock {
-        position: absolute;
         bottom: 0;
         right: 0;
         left: 0;

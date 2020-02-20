@@ -26,77 +26,77 @@
                     <h3 class="score__title">
                         SCORE
                     </h3>
-                    <h2 class="score__number">
-                        12
+                    <h2 id="game-score" class="score__number">
+                        0
                     </h2>
                 </div>
             </div>
         </div>
     </header>
     <main class="main">
-        <section class="step1" style="display: none;">
+        <section id="step1" class="step1">
             <div class="container">
-                <div class="content">
-                    <div class="shapes-wrapper">
-                        <div class="step1__paper paper"></div>
-                        <div class="step1__scissors scissors"></div>
-                        <div class="step1__rock rock"></div>
+                <div class="content ">
+                    <div class="shapes-wrapper ">
+                        <div class="step1__paper shape" data-shape="paper"></div>
+                        <div class="step1__scissors shape" data-shape="scissors"></div>
+                        <div class="step1__rock shape" data-shape="rock"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="game-wizard">
-            <div class="container">
-                <div class="content">
-                    <div class="game-wizard__user-selection shape-selection">
-                        <div class="shape-selection__shape rock"></div>
+        <section id="game-wizard" class="game-wizard " style="display: none ">
+            <div class="container ">
+                <div class="content ">
+                    <div class="game-wizard__user-selection shape-selection ">
+                        <div id="user-shape" class="shape-selection__shape shape"></div>
                         <p class="shape-selection__who-select">
                             YOU PICKED
                         </p>
                     </div>
-                    <div class="game-wizard__computer-selection shape-selection">
-                        <div class="shape-selection__shape shape-placeholder"></div>
+                    <div class="game-wizard__computer-selection shape-selection ">
+                        <div id="computer-shape" class="shape-selection__shape shape shape-placeholder "></div>
                         <p class="shape-selection__who-select">
                             THE HOUSE PICKED
                         </p>
                     </div>
-                    <div class="game-wizard__game-state game-state">
-                        <p class="game-state__who-won">
+                    <div id="game-state" class="game-wizard__game-state game-state">
+                        <p class="game-state__who-won ">
                             YOU WIN
                         </p>
-                        <button class="game-state__play-again">PLAY AGAIN</button>
+                        <button id="play-again" class="game-state__play-again">PLAY AGAIN</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="content">
-                <button class="footer__rules">
+    <footer class="footer ">
+        <div class="container ">
+            <div class="content ">
+                <button id="rules-button" class="footer__rules ">
                     RULES
                 </button>
             </div>
         </div>
     </footer>
 
-    <section class="rules-modal">
-        <div class="container">
-            <div class="content">
-                <h2 class="rules-modal__title">RULES</h2>
-                <img class="rules-modal__rules-img" src="/images/image-rules.svg" alt="rules"></img>
-                <button class="rules-modal__close">
-                    <img class="rules-modal__close-icon" src="/images/icon-close.svg" alt="icon close model"></img>
+    <section id="rules-modal" class="rules-modal ">
+        <div class="container ">
+            <div class="content ">
+                <h2 class="rules-modal__title ">RULES</h2>
+                <img class="rules-modal__rules-img " src="/images/image-rules.svg " alt="rules "></img>
+                <button class="rules-modal__close ">
+                    <img class="rules-modal__close-icon " src="/images/icon-close.svg " alt="icon close model "></img>
                 </button>
             </div>
-            <div class="overlay">
+            <div class="overlay ">
             </div>
         </div>
 
     </section>
 
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js "></script>
 </body>
 
 </html>

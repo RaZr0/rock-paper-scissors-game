@@ -19,19 +19,8 @@
 @mixin shape($shape-url, $border-color, $box-shadow-color) {
     @extend .base-shape;
     position: relative;
-    box-shadow: 0 10px 0 $box-shadow-color;
-    @media #{$small} {
-        box-shadow: 0 6px 0 $box-shadow-color;
-    }
-    @media #{$medium},
-    #{$large} {
-        box-shadow: 0 11px 0 $box-shadow-color;
-    }
+    box-shadow: 0 6px 0 $box-shadow-color;
     background: $border-color;
-    &:hover {
-        box-shadow: 0 6px 0 $box-shadow-color, 0 0px 0px 20px rgba(#979797, .2);
-        cursor: pointer;
-    }
     &::before {
         content: '';
         background-image: url($shape-url );
@@ -81,14 +70,14 @@
     background: rgba(0, 0, 0, 0.1);
 }
 
-.paper {
+.shape[data-shape="paper"] {
     @include shape('/images/icon-paper.svg', linear-gradient($Paper-Gradient), #2a45c2);
 }
 
-.scissors {
+.shape[data-shape="scissors"] {
     @include shape('/images/icon-scissors.svg', linear-gradient($Scissors-Gradient), #c76c1b);
 }
 
-.rock {
+.shape[data-shape="rock"] {
     @include shape('/images/icon-rock.svg', linear-gradient($Rock-Gradient), #9d1634);
 }

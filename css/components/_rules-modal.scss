@@ -55,6 +55,7 @@
         }
     }
     &__close {
+        cursor: pointer;
         background: inherit;
         border: 0;
         @media #{$small} {
