@@ -1,12 +1,16 @@
-.step1 {
+.user-selection-step {
     background-image: url(/images/bg-triangle.svg);
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-size: contain;
     margin: auto;
-    @media #{$small} {}
-    @media #{$medium},
-    #{$large} {}
+    animation-name: user-selection-stepAnimation;
+    animation-duration: 1s;
+    
+    @keyframes user-selection-stepAnimation {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
     .content {
         position: relative;
         margin: auto;

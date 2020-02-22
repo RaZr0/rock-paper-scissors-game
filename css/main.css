@@ -200,13 +200,6 @@ table {
   }
 }
 
-.footer {
-  padding: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .footer__rules {
   color: #ffffff;
   padding: 11px;
@@ -220,15 +213,18 @@ table {
   font-weight: 700;
 }
 
-@media (max-width: 767.9px) {
+@media (max-width: 767.9px), (min-width: 768px) and (max-width: 1365.9px) {
   .footer__rules {
-    margin: auto;
+    margin: 52px auto;
+    display: block;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
+@media (min-width: 1366px) {
   .footer__rules {
-    margin-left: auto;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
   }
 }
 
@@ -485,8 +481,8 @@ table {
 }
 
 .score {
-  background: -webkit-gradient(linear, left bottom, left top, from(#F3F3F3), to(#FFFFFF));
-  background: linear-gradient(0deg, #F3F3F3, #FFFFFF);
+  background: -webkit-gradient(linear, left bottom, left top, from(#f3f3f3), to(#ffffff));
+  background: linear-gradient(0deg, #f3f3f3, #ffffff);
   -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -546,54 +542,99 @@ table {
   }
 }
 
-.step1 {
+.score__number--updated {
+  -webkit-animation: 1s scoreAnimation;
+          animation: 1s scoreAnimation;
+}
+
+@-webkit-keyframes scoreAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scoreAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.user-selection-step {
   background-image: url(/images/bg-triangle.svg);
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-size: contain;
   margin: auto;
+  -webkit-animation-name: user-selection-stepAnimation;
+          animation-name: user-selection-stepAnimation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
-.step1 .content {
+@-webkit-keyframes user-selection-stepAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes user-selection-stepAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.user-selection-step .content {
   position: relative;
   margin: auto;
 }
 
 @media (max-width: 767.9px) {
-  .step1 .content {
+  .user-selection-step .content {
     min-height: 219px;
     max-width: 318px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
-  .step1 .content {
+  .user-selection-step .content {
     min-height: 319px;
     max-width: 474px;
   }
 }
 
-.step1 .shape {
+.user-selection-step .shape {
   position: absolute;
 }
 
-.step1 .shape:hover {
+.user-selection-step .shape:hover {
   -webkit-box-shadow: 0 0px 0px 20px rgba(151, 151, 151, 0.2);
           box-shadow: 0 0px 0px 20px rgba(151, 151, 151, 0.2);
   cursor: pointer;
 }
 
-.step1__paper {
+.user-selection-step__paper {
   top: -25%;
   left: 0;
 }
 
-.step1__scissors {
+.user-selection-step__scissors {
   top: -25%;
   right: 0;
 }
 
-.step1__rock {
+.user-selection-step__rock {
   bottom: 0;
   right: 0;
   left: 0;
@@ -643,7 +684,7 @@ table {
   color: #db2e4d;
 }
 
-.game-wizard .content {
+.game-wizard-step .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -655,50 +696,50 @@ table {
 }
 
 @media (max-width: 767.9px) {
-  .game-wizard .content {
+  .game-wizard-step .content {
     max-width: 318px;
     margin: auto;
   }
 }
 
 @media (max-width: 767.9px) {
-  .game-wizard .shape-selection__shape--winner {
+  .game-wizard-step .shape-selection__shape--winner {
     -webkit-box-shadow: 0 0px 0px 20px rgba(151, 151, 151, 0.06), 0 0px 0px 50px rgba(151, 151, 151, 0.03), 0 0px 0px 82px rgba(151, 151, 151, 0.025);
             box-shadow: 0 0px 0px 20px rgba(151, 151, 151, 0.06), 0 0px 0px 50px rgba(151, 151, 151, 0.03), 0 0px 0px 82px rgba(151, 151, 151, 0.025);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
-  .game-wizard .shape-selection__shape--winner {
+  .game-wizard-step .shape-selection__shape--winner {
     -webkit-box-shadow: 0 0px 0px 65px rgba(151, 151, 151, 0.06), 0 0px 0px 152px rgba(151, 151, 151, 0.03), 0 0px 0px 250px rgba(151, 151, 151, 0.025);
             box-shadow: 0 0px 0px 65px rgba(151, 151, 151, 0.06), 0 0px 0px 152px rgba(151, 151, 151, 0.03), 0 0px 0px 250px rgba(151, 151, 151, 0.025);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1365.9px), (min-width: 1366px) {
-  .game-wizard .shape-selection__shape {
+  .game-wizard-step .shape-selection__shape {
     height: 300px;
     width: 300px;
     border-width: 22px;
   }
-  .game-wizard .shape-selection__shape:before {
+  .game-wizard-step .shape-selection__shape:before {
     width: 79.9px;
     height: 118.23px;
   }
 }
 
-.game-wizard__game-state {
+.game-wizard-step__game-state {
   display: none;
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .container {
+  .game-wizard-step.round-end .container {
     max-width: inherit;
   }
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .content {
+  .game-wizard-step.round-end .content {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -709,7 +750,7 @@ table {
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .game-wizard__user-selection {
+  .game-wizard-step.round-end .game-wizard-step__user-selection {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -717,14 +758,14 @@ table {
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .game-wizard__computer-selection {
+  .game-wizard-step.round-end .game-wizard-step__computer-selection {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
   }
 }
 
-.game-wizard.round-end .game-wizard__computer-selection .shape-selection__shape {
+.game-wizard-step.round-end .game-wizard-step__computer-selection .shape-selection__shape {
   -webkit-animation-name: computerShapeSelection;
           animation-name: computerShapeSelection;
   -webkit-animation-duration: 1s;
@@ -749,12 +790,12 @@ table {
   }
 }
 
-.game-wizard.round-end .game-wizard__game-state {
+.game-wizard-step.round-end .game-wizard-step__game-state {
   visibility: hidden;
 }
 
 @media (max-width: 767.9px), (min-width: 768px) and (max-width: 1365.9px) {
-  .game-wizard.round-end .game-wizard__game-state {
+  .game-wizard-step.round-end .game-wizard-step__game-state {
     margin-top: 62px;
     width: 100%;
     -ms-grid-column-align: center;
@@ -763,19 +804,19 @@ table {
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .game-wizard__game-state {
+  .game-wizard-step.round-end .game-wizard-step__game-state {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
 }
 
-.game-wizard.round-end .game-state {
+.game-wizard-step.round-end .game-state {
   display: block;
 }
 
 @media (max-width: 767.9px), (min-width: 768px) and (max-width: 1365.9px) {
-  .game-wizard.round-end .game-state {
+  .game-wizard-step.round-end .game-state {
     margin-top: 62px;
     width: 100%;
     -ms-grid-column-align: center;
@@ -784,7 +825,7 @@ table {
 }
 
 @media (min-width: 1366px) {
-  .game-wizard.round-end .game-state {
+  .game-wizard-step.round-end .game-state {
     margin: 0 68px;
   }
 }

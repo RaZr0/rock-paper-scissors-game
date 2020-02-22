@@ -1,14 +1,14 @@
 .footer {
-  padding: 32px;
-  display: flex;
   &__rules {
-    @media #{$small} {
-        margin: auto;
+    @media #{$small},#{$medium} {
+      margin: 52px auto;
+      display: block;
     }
-    @media #{$medium},#{$large} {
-        margin-left: auto;
+    @media #{$large} {
+      position: absolute;
+      right: 32px;
+      bottom: 32px;
     }
-
     color: $white;
     padding: 11px;
     background: transparent;

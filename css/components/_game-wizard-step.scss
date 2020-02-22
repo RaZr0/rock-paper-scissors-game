@@ -1,4 +1,4 @@
-.game-wizard {
+.game-wizard-step {
   .content {
     display: flex;
     justify-content: space-between;
@@ -48,12 +48,12 @@
         justify-content: center;
       }
     }
-    .game-wizard__user-selection {
+    .game-wizard-step__user-selection {
       @media #{$large} {
         order: 1;
       }
     }
-    .game-wizard__computer-selection {
+    .game-wizard-step__computer-selection {
       @media #{$large} {
         order: 3;
       }
@@ -73,7 +73,7 @@
         }
       }
     }
-    .game-wizard__game-state {
+    .game-wizard-step__game-state {
       visibility: hidden;
       @media #{$small},
             #{$medium} {

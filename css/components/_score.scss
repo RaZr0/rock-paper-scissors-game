@@ -1,40 +1,52 @@
 .score {
-    background: linear-gradient(0deg, #F3F3F3, #FFFFFF);
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    width: fit-content;
-    text-align: center;
+  background: linear-gradient(0deg, #f3f3f3, #ffffff);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: fit-content;
+  text-align: center;
+
+  @media #{$small} {
+    padding: 10px 19px;
+    max-height: 72px;
+  }
+  @media #{$medium},
+    #{$large} {
+    padding: 16px 48px;
+  }
+  &__title {
+    color: $Score-Text;
     @media #{$small} {
-        padding: 10px 19px;
-        max-height: 72px;
+      font-size: 0.625rem;
+      letter-spacing: 1.5px;
+      line-height: 13px;
     }
     @media #{$medium},
-    #{$large} {
-        padding: 16px 48px;
-    }
-    &__title {
-        color: $Score-Text;
-        @media #{$small} {
-            font-size: 0.625rem;
-            letter-spacing: 1.5px;
-            line-height: 13px;
-        }
-        @media #{$medium},
         #{$large} {
-            letter-spacing: 2.5px;
-            line-height: 21px;
-        }
+      letter-spacing: 2.5px;
+      line-height: 21px;
     }
-    &__number {
-        color: $Dark-Text;
-        @media #{$small} {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        @media #{$medium},
+  }
+  &__number {
+    color: $Dark-Text;
+    @media #{$small} {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    @media #{$medium},
         #{$large} {
-            font-size: 4rem;
-            font-weight: 700;
-        }
+      font-size: 4rem;
+      font-weight: 700;
     }
+  }
+  &__number--updated {
+    animation: 1s scoreAnimation;
+    @keyframes scoreAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 }

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     rulesModalEl.style.display = 'none';
                 });
             }
-            RPCGame = (function () {
+            var game = (function () {
                 const Shapes = {
                     rock: "rock",
                     paper: "paper",
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         this.shapes = Object.values(Shapes);
                     }
 
-                    selectShape() {
+                    selectRandomShape() {
                         const rand = Math.floor(Math.random() * Object.keys(Shapes).length);
                         super.selectShape(this.shapes[rand]);
                         return this.shapes[rand];
@@ -114,25 +114,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 class UiHandler {
                     constructor() {
-                        this._step1El = document.getElementById('step1');
-                        this._gameWizardEl = document.getElementById('game-wizard');
+                        this._userSelectionStepEl = document.getElementById('user-selection-step');
+                        this._gameWizardEl = document.getElementById('game-wizard-step');
                         this._computerShapeEl = document.getElementById('computer-shape');
                         this._userShapeEl = document.getElementById('user-shape');
                         this._gameStateEl = document.getElementById('game-state');
                         this._gameStateWhoWonEL = this._gameStateEl.querySelector('.game-state__who-won');
                         this._playAgainButton = document.getElementById('play-again');
+                        this._gameScoreEl = document.getElementById('game-score');
                         this.initPlayAgainListener();
                     }
 
                     initPlayAgainListener() {
                         this._playAgainButton.addEventListener('click', function () {
-                            this.backToStep1();
+                            this.backToUserSelectionStep();
                         }.bind(this));
                     }
 
 
                     userSelectShapeListener(callback) {
-                        this._step1El.querySelectorAll('.shape').forEach((shape) => {
+                        this._userSelectionStepEl.querySelectorAll('.shape').forEach((shape) => {
                             shape.addEventListener('click', function () {
                                 callback(this.dataset['shape']);
                             });
@@ -141,8 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                     updateUserScore(score) {
-                        const gameScoreEl = document.getElementById('game-score');
-                        gameScoreEl.innerHTML = score;
+                        this._gameScoreEl.innerHTML = score;
+                        this._gameScoreEl.classList.toggle('score__number--updated');
+                        setTimeout(()=>{
+                            this._gameScoreEl.classList.toggle('score__number--updated');
+                        },1000);
                     }
 
                     computerSelectShape(shape, callback) {
@@ -152,14 +156,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         }, 1000)
                     }
 
-                    updateGameState(whoWon , score) {
-                        this.updateUserScore(score);
+                    updateGameState(whoWon, score) {
                         if (whoWon === 'user') {
                             this._userShapeEl.classList.add('shape-selection__shape--winner');
                             this._gameStateWhoWonEL.innerHTML = 'YOU WIN';
+                            this.updateUserScore(score);
+
                         } else if (whoWon === 'computer') {
                             this._computerShapeEl.classList.add('shape-selection__shape--winner');
                             this._gameStateWhoWonEL.innerHTML = 'YOU LOSE';
+
                         } else
                             this._gameStateWhoWonEL.innerHTML = 'DRAW';
                         this._gameStateEl.style.visibility = 'visible';
@@ -169,20 +175,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         this._userShapeEl.dataset['shape'] = shape;
                     }
 
-                    backToStep1() {
+                    backToUserSelectionStep() {
                         this._userShapeEl.dataset['shape'] = null;
                         this._computerShapeEl.dataset['shape'] = null;
                         this.resetUi();
                     }
 
                     moveToGameWizard() {
-                        this._step1El.style.display = 'none';
+                        this._userSelectionStepEl.style.display = 'none';
                         this._gameWizardEl.style.display = 'block';
                         this._gameWizardEl.classList.toggle('round-end')
                     }
 
-                    resetUi(){
-                        this._step1El.style.display = 'block';
+                    resetUi() {
+                        this._userSelectionStepEl.style.display = 'block';
                         this._gameWizardEl.style.display = 'none';
                         this._gameWizardEl.classList.toggle('round-end')
                         this._gameStateEl.style.visibility = 'hidden';
@@ -199,22 +205,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     start() {
-                        this._uiHandler.updateUserScore(0);
                         this._uiHandler.userSelectShapeListener(function (shape) {
                             this._gameHandler.user.selectShape(shape);
                             this._uiHandler.userSelectShape(shape);
-                            this._gameHandler.computer.selectShape();
+                            this._gameHandler.computer.selectRandomShape();
                             this._uiHandler.moveToGameWizard();
                             this._uiHandler.computerSelectShape(this._gameHandler.computer.selectedShape, function () {
                                 this._gameHandler.updateRoundState();
-                                this._uiHandler.updateGameState(this._gameHandler.currentRoundWinner , this._gameHandler.score);
+                                this._uiHandler.updateGameState(this._gameHandler.currentRoundWinner, this._gameHandler.score);
                             }.bind(this));
                         }.bind(this));
                     }
                 }
                 return new GameFacade();
             })();
-            RPCGame.start();
+            game.start();
             initModalEvents();
         }
     }
